@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Caractéristiques des planètes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 20px;
+      background: #0b3d91;
+      color: white;
+    }
+    h1 {
+      text-align: center;
+    }
+    .planete {
+      background: #1e90ff;
+      margin: 10px 0;
+      padding: 15px;
+      border-radius: 10px;
+    }
+    .planete h2 {
+      margin: 0 0 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Caractéristiques des planètes du système solaire</h1>
+  <div id="contenu"></div>
+
+  <script>
+    const planetes = [
+      { nom: "Mercure", diamètre: "4 879 km", distanceSoleil: "57,9 millions km", lunes: 0 },
+      { nom: "Vénus", diamètre: "12 104 km", distanceSoleil: "108,2 millions km", lunes: 0 },
+      { nom: "Terre", diamètre: "12 742 km", distanceSoleil: "149,6 millions km", lunes: 1 },
+      { nom: "Mars", diamètre: "6 779 km", distanceSoleil: "227,9 millions km", lunes: 2 },
+      { nom: "Jupiter", diamètre: "139 820 km", distanceSoleil: "778,5 millions km", lunes: 95 },
+      { nom: "Saturne", diamètre: "116 460 km", distanceSoleil: "1,4 milliard km", lunes: 146 },
+      { nom: "Uranus", diamètre: "50 724 km", distanceSoleil: "2,9 milliards km", lunes: 28 },
+      { nom: "Neptune", diamètre: "49 244 km", distanceSoleil: "4,5 milliards km", lunes: 16 }
+    ];
+
+    const contenu = document.getElementById("contenu");
+
+    planetes.forEach(p => {
+      const div = document.createElement("div");
+      div.className = "planete";
+      div.innerHTML = `
+        <h2>${p.nom}</h2>
+        <p><strong>Diamètre :</strong> ${p.diamètre}</p>
+        <p><strong>Distance du Soleil :</strong> ${p.distanceSoleil}</p>
+        <p><strong>Nombre de lunes :</strong> ${p.lunes}</p>
+      `;
+      contenu.appendChild(div);
+    });
+  </script>
+</body>
+</html>
